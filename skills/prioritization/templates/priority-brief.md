@@ -1,53 +1,52 @@
-# Priority brief
+# Focus brief
 
-## Destination
-- Goal / beneficiary:
-- Next milestone and success measure:
+Do not fill this as a final recommendation before the confirmation gate. During the interview, track answers and unresolved questions instead.
+
+## Confirmed frame
+- Purpose / beneficiary:
+- Outcome and success measure:
 - Baseline:
-- Horizon / capacity:
-- Hard constraints and user values:
-
-## Evidence and uncertainty
-- Facts and sources:
-- User decisions/preferences:
-- Assumptions:
-- Decision-changing unknowns:
+- Primary optimization and accepted sacrifices:
+- Hard minimums / protected obligations:
+- Resources, advantages, and immediately feasible choices:
+- Constraints and risk tolerance:
+- User confirmation (quote or faithful paraphrase):
 
 ## Bottleneck
-- Current blocker hypothesis:
+- Current bottleneck and evidence:
+- Facts and sources:
+- Assumptions:
+- User's challenge and resolution:
 - Causal chain to the outcome:
 - Evidence that would disprove it:
 
-## Routes
-| Route | Blocker removed / causal link | Evidence / assumption | Time to evidence or value | Effort, risk, reversibility, opportunity cost | Readiness / constraints | Verdict |
-|---|---|---|---|---|---|---|
-| | | | | | | |
-
-- Recommendation and confidence:
-- Why the strongest alternative loses now:
-- Reversal condition:
-
-## Now
-- One action:
+## Now — one primary effort
+- Primary effort:
+- First concrete action:
 - Owner (confirmed or proposed):
-- First concrete step:
 - Timebox:
 - Observable artifact:
 - Acceptance criterion:
-- Safety / quality floor and rollout blockers:
+- Safety / quality minimums:
 - Stop / pivot condition:
 
-## Next — conditional, not a backlog
-- If [Now produces evidence], then [next milestone]:
-
-## Stop / defer
-| Item | Prerequisite, later enabler, optional interest, or distraction | Reason | Revisit trigger |
+## Allocation decisions
+| Existing activity or expense | Attack / Support / Maintain / Stop | Current causal role or reason to stop | Time / money / attention cap or reclaimed allocation |
 |---|---|---|---|
 | | | | |
+
+- Learning applied directly to this effort:
+- Where reclaimed resources go:
+- Not now within this path:
+- Not part of this path:
+- Revisit trigger (material requirement or changed purpose only):
 
 ## Review
 - Date or event:
 - Evidence to inspect against baseline:
-- Continue / pivot / stop thresholds:
-- Decision status: proposed / user-confirmed
-- Execution authorization: not granted by this brief
+- Continue / change diagnosis / stop criteria:
+- Reversal condition:
+- Decision status: blocked / provisional / user-confirmed
+- Execution authorization: separate from this brief
+
+No broad roadmap, Next list, or automatic reactivation of stopped pursuits.

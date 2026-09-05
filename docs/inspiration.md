@@ -8,7 +8,7 @@ The creator's example supplies the judgment standard: a goal of serving SMBs wit
 
 Matt Pocock's [skills repository](https://github.com/mattpocock/skills):
 
-- [`grilling`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md): dependency-aware questioning; retrieve facts rather than asking users to repeat accessible information. We deliberately depart from exhaustive interviewing: stop once a safe next decision is supported.
+- [`grilling`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md): dependency-aware questioning; retrieve facts rather than asking users to repeat accessible information. The revised skill requires dependent interview rounds and a user-confirmed decision frame before prescribing; asking only enough to suggest a plausible action proved too weak.
 - [`triage`](https://github.com/mattpocock/skills/blob/main/skills/engineering/triage/SKILL.md): verify claims before expanding a plan; preserve reasons for rejecting work. Here, deferred priorities have explicit reasons and revisit triggers rather than issue-tracker states.
 - [`to-tickets`](https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md): narrow verifiable end-to-end slices with genuine dependencies. Here, the output is one next action, not a published ticket backlog.
 
@@ -18,7 +18,7 @@ These are conceptual influences. No upstream implementation or substantial text 
 
 ## Original synthesis
 
-- Outcome → milestone → blocker → bounded action → evidence → review.
+- Purpose → outcome → optimization → resources/constraints → confirmed frame → shared bottleneck → allocation cuts → focus commitment.
 - Shortest *credible* route includes risk, rework, human effort, and support.
 - Diagnose before choosing AI, deterministic automation, software, human judgment, or no change.
 - Prerequisites require a causal blocking argument, not a generic “useful someday” claim.
@@ -27,4 +27,4 @@ These are conceptual influences. No upstream implementation or substantial text 
 
 ## Portability boundary
 
-The payload is Markdown with YAML frontmatter and relative references. Default-profile installation and two behavioral smoke cases have been exercised in Hermes and OMP; see [results and limitations](smoke-results.md). This does not establish universal host/model compatibility. No Hermes repository-specific documentation generator or runtime code is included in this standalone repository.
+The payload is Markdown with YAML frontmatter and relative references. For v0.1.0 only, default-profile installation and two behavioral smoke cases were exercised in Hermes and OMP; see [results and limitations](smoke-results.md). This does not establish universal host/model compatibility. No Hermes repository-specific documentation generator or runtime code is included in this standalone repository.

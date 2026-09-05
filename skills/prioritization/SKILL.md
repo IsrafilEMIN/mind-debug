@@ -1,120 +1,132 @@
 ---
 name: prioritization
-description: "Use when choosing the next step toward a goal."
-version: 0.1.0
+description: "Use when clarifying goals and cutting distractions."
+version: 0.2.0
 author: IsrafilEMIN, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [priorities, decision-making, strategy]
+    tags: [priorities, focus, decision-making]
     related_skills: []
 ---
 
 # Prioritization
 
-Find the shortest credible route from the user's actual goal to verified progress. Optimize against the user's values and constraints, not the agent's preferred technology or a default ambition to make money. Produce a decision and a bounded next action, not a comprehensive curriculum or implementation project.
+Interview first. Establish what the user is actually pursuing, identify the constraint preventing progress, and concentrate effort on removing it. The result is a commitment to one direction and one current bottleneck—not a way to justify, sequence, or preserve every attractive activity.
 
 ## When to Use
 
-- The user knows the direction but is unsure what to do next.
-- Several attractive projects compete for attention.
-- Preparation, research, tooling, or optimization may be displacing progress.
-- New evidence, a missed milestone, or a changed constraint requires reprioritization.
+- The user is busy across several activities but unsure which deserve attention.
+- Learning, spending, optimization, or side projects may serve competing directions.
+- The stated goal is broad, conflicting, or disconnected from actual allocations.
+- The user wants their priorities challenged, not another menu of possibilities.
 
-Don't use for: executing an already agreed task with no material priority conflict, urgent incident response that already has a playbook, or replacing qualified legal/medical judgment.
+Don't use for: overriding the user's values, policing leisure, replacing professional judgment, or reopening an agreed execution task without a material priority conflict.
 
 ## Prerequisites
 
-No platform-specific dependency. Use the host agent's available search, file, calculation, and question tools when needed; do not invent tool names or capabilities. Read existing goals and decision records when supplied. Do not access unrelated private material to fill gaps.
+No platform-specific dependency. Read supplied context and prior decisions; use available read/search/calculation tools for relevant facts. Do not inspect unrelated private material. The user is the authority on their intent and acceptable trade-offs; neither web research nor memory can substitute for asking them.
 
 ## Procedure
 
-### 1. Establish the destination
+### 1. Interview through the hierarchy
 
-Restate the intended beneficiary, desired change, observable success measure, time horizon, and non-negotiable constraints. Distinguish the long-term direction from the next meaningful milestone. Include current baseline and capacity if known.
+Do not jump from an aspiration to a recommendation. Work through these layers in order, carrying the answers forward:
 
-Retrieve accessible facts rather than asking the user to repeat them. Ask only missing questions whose answers could change the next action; group independent questions and sequence dependent ones. Do not force a numeric target where the user has not chosen one: propose it as provisional. If goals conflict, ask which governs or explicitly preserve the trade-off.
+1. **Purpose:** Why does this matter? Who is it for? What is the user ultimately trying to change or become? Which competing ambitions are explicitly outside this pursuit?
+2. **Outcome:** What concrete result would count as success? What is the current state, desired state, and relevant horizon? Distinguish an outcome from a tool, course, project, or identity label.
+3. **Optimization:** What matters most when objectives conflict: speed, scalability, reliability, risk coverage, revenue, cost, mastery, or something else? Which are hard minimums rather than objectives to maximize? What will the user knowingly sacrifice?
+4. **Resources and advantages:** What time, money, runway, skills, access, relationships, assets, and existing work are actually available? Which advantages can be used now rather than acquired first?
+5. **Constraints and risk:** What obligations, deadlines, dependencies, permissions, capacity limits, and failure consequences apply? How much financial, operational, and reputational risk is acceptable? What must remain protected?
+6. **Current choices and allocations:** What can the user implement immediately? What are they already doing, learning, buying, maintaining, or considering? Include courses, subscriptions, hardware, side projects, and recurring attention costs. What does each consume and produce?
 
-**Exit:** one outcome statement, with unknowns labeled. Do not invent a customer, budget, deadline, demand, or risk tolerance.
+Ask a small coherent round, listen, then ask follow-ups. Group independent questions; defer questions whose meaning depends on an unanswered earlier layer. Probe vague answers and contradictions with concrete examples. Do not dump this entire checklist at once, impose a fixed interview length, or mechanically re-ask facts already settled.
 
-### 2. Find the current bottleneck
+**Exit:** enough specific answers to explain the intended direction, governing trade-offs, practical limits, and competing commitments. A vague opening prompt normally calls for questions—not a priority brief.
 
-Work backward: outcome ← necessary milestone ← current blocker. Separate facts (with sources), user preferences, assumptions, and open questions. A hypothesis is not a proven bottleneck.
+### 2. Confirm the decision frame before prescribing
 
-Ask: “If this activity succeeded tomorrow, what would still prevent the outcome?” Then ask: “If we skipped it, what specific failure would block the next milestone?” Skills, credentials, infrastructure, and research are prerequisites only when that causal link holds. Challenge sunk-cost justifications without belittling curiosity.
+Reflect back: “You are pursuing X, optimizing primarily for Y, while preserving Z, with these resources and constraints. These other pursuits are not part of this commitment.” Ask the user to correct or confirm it. Surface contradictions rather than smoothing them over.
 
-If demand, access, or feasibility is unknown, prioritize a bounded test of the most decision-changing uncertainty rather than pretending implementation is ready. Research must name the decision it will unlock, its evidence threshold, and a stopping time.
+**Confirmation gate:** do not recommend a focus until this frame is user-confirmed. Explicit confirmation already present in the conversation counts; do not demand a ritual extra turn. Silence, missing information, and an agent's plausible interpretation do not count.
 
-**Exit:** one bottleneck hypothesis, supporting evidence, and the observation that could disprove it.
+If the user explicitly requests a provisional answer without questions, label assumptions and give only a conditional assessment. Do not present the direction or bottleneck as validated. If interaction is unavailable, return the unresolved questions unless a confirmed frame was supplied; do not invent one merely to finish.
 
-### 3. Compare a small set of routes
+**Exit:** a user-confirmed decision frame, or a clearly blocked/provisional status. Do not use an experiment to avoid asking about intent, risk tolerance, resources, or commitments.
 
-Usually compare three to five plausible routes, including the user's favored activity, a direct route to the milestone, and a cheaper/manual/no-build alternative when relevant. Do not manufacture extra options for a trivial decision.
+### 3. Establish the current bottleneck with the user
 
-For each route record:
-- Causal link to the goal and blocker removed.
-- Evidence strength and the critical assumption.
-- Time to useful evidence or value, including dependencies, review, deployment, and likely rework.
-- Effort/cash, downside, reversibility, and opportunity cost.
-- Whether it meets the minimum safety, quality, and reliability bar.
+Ask what specifically prevents the next meaningful result today. Examine recent attempts, actual failures, unfinished deliverables, feedback, and dependencies. Work backward from the confirmed outcome, not forward from the user's favorite tool.
 
-Use these rules in order:
-1. Exclude options that violate hard constraints or lack necessary authorization.
-2. Reject dominated routes: another route achieves the same relevant result with no greater burden or risk and less of at least one. State uncertainty where comparisons are not established.
-3. Prefer the feasible route addressing the current blocker with the shortest credible time to meaningful evidence or value.
-4. Under substantial uncertainty, favor a cheap reversible test with a result that can actually change the choice.
-5. Break genuine ties using the user's values and strategic capability goals; do not default to easiest, most profitable, or most interesting.
+Challenge each proposed blocker:
+- If it disappeared tomorrow, what meaningful progress would become possible?
+- What would still prevent that progress?
+- Is this the current constraint, or a possible future concern?
+- What evidence supports it, and what would show the diagnosis is wrong?
 
-Use qualitative judgments unless numerical inputs are defensible. If calculating, use a calculation tool, expose assumptions/ranges, and test whether plausible changes reverse the result. Do not disguise guesses in a weighted score.
+Distinguish missing knowledge from missing practice, delivery quality, access, demand, execution, or willingness to commit. Do not infer the answer from a generic business playbook. Offer your diagnosis with reasons, invite the user's challenge, and resolve material disagreements before treating it as established. User agreement establishes shared understanding, not empirical proof.
 
-**Exit:** a compact comparison, a recommended route, why the strongest alternative loses now, and the condition that would reverse the ranking.
+When a critical factual uncertainty remains after the interview, identify it precisely. Only then consider a bounded investigation that can distinguish competing explanations. It must stay within the confirmed direction and specify the decision it resolves, evidence needed, and stopping condition. “Test several paths and see” is not a substitute for focus.
 
-### 4. Apply the diagnosis-before-tools check
+**Exit:** one shared current bottleneck, with evidence and remaining uncertainty explicitly separated. If it cannot yet be established, continue the analysis rather than manufacturing certainty.
 
-For business/AI work, load [the SMB anchor](references/smb-ai-example.md). Diagnose efficiency gains, cost savings, revenue opportunities, and failure costs before selecting a stack. Compare conventional software, deterministic automation, AI, human judgment, and no change. If AI is a user-imposed constraint, state the trade-off rather than inventing a need for AI.
+### 4. Audit allocations and eliminate competing paths
 
-Separate discovery, prototype, controlled pilot, and production milestones. Never label a demo production-ready. A delivery action needs a risk-proportionate floor: representative tests/evaluations, permissions and data handling, failure/timeout behavior, human escalation, observability, rollback or manual recovery, and an accountable operator. Define measurable acceptance thresholds before live rollout; unknown thresholds are blockers to rollout, not to safe discovery. Avoid “bug-free” promises.
+Evaluate existing choices against the confirmed direction and bottleneck. Do not generate a menu by default. Introduce an alternative only when it exposes a mistaken assumption or materially changes the focus decision.
 
-Do not reflexively defer infrastructure: verified offline, privacy, latency, cost, or scale requirements can make local inference the real prerequisite. Do not mandate enterprise infrastructure for a small reversible experiment.
+Classify each material allocation:
+- **Attack:** directly removes the current bottleneck.
+- **Support:** a necessary, bounded input to that same effort, with a concrete use and output.
+- **Maintain:** an unavoidable obligation or minimum operating requirement; protect its minimum allocation without turning it into a growth project.
+- **Stop:** pursues a different path, optimizes the wrong objective, addresses an unproven future need, or cannot justify its opportunity cost.
 
-**Exit:** the chosen route is justified by the problem, with an appropriate readiness bar and any delivery blockers explicit.
+Ask: “Which current deliverable does this serve? What would fail if it stopped? Why must it consume resources now?” Shared vocabulary is not alignment: two activities both involving AI can serve different careers, businesses, or technical directions.
 
-### 5. Commit attention, not an entire roadmap
+Do not turn Stop items into a sequenced backlog. Distinguish “not now within this path” from “not part of this path.” Neither receives active time or spending merely because it might be useful someday. Reconsider only when a material requirement or the user's purpose changes—not on a recurring invitation to reopen distractions.
 
-Use [the priority brief](templates/priority-brief.md). Set exactly one **Now** action unless a real independent parallel obligation makes that impossible; explain any exception and protect the bottleneck work. Name its owner, first concrete step, timebox, observable artifact, acceptance criterion, and stop/pivot condition. If ownership is unknown, propose rather than assign another person.
+**Exit:** explicit keep/limit/stop decisions and the time, money, and attention to reclaim. If exact amounts are unknown, ask or label them unknown; do not invent savings. Recommend cancellations or pauses, but do not execute them without authorization.
 
-List **Next** only where it is conditional on the Now result. Classify competing work as necessary prerequisite, later enabler, optional interest, or distraction relative to this goal. For each deferred item, record a reason and an evidence-based revisit trigger. Optional interests can have a user-chosen budget; they need not masquerade as business progress.
+### 5. Learn and practice on the chosen path
 
-When evidence is insufficient, mark the recommendation provisional and make Now an information-gathering action. Do not force a build decision.
+One focus can require several coordinated inputs. A course, model subscription, evaluation harness, and implementation practice may all support one applied-AI delivery effort. Do not confuse multiple tools with multiple directions—or accept every adjacent purchase as justified.
 
-**Exit:** a brief the user can act on without another planning session. Writing the brief is not evidence of outcome progress.
+For learning or spending, require a traceable chain: resource → skill or capability used now → work on the bottleneck → intended outcome. Apply learning to the actual target work, or a representative practice task with the same relevant requirements. Do not create an unrelated project to rationalize “learning by doing.” Learning that does not transfer into the current effort stays outside its allocation.
 
-### 6. Review and hand off
+For business/AI work, read [the SMB anchor](references/smb-ai-example.md). If the confirmed purpose is scaling reliable applied-AI delivery, evaluation and production practice may be aligned support. Local-model tinkering, hardware shopping, or premature inference-cost reduction are distractions unless evidence makes them necessary for that purpose now. A verified offline contract can reverse that judgment; speculative future savings cannot.
 
-Set a review date or observable event, the evidence to inspect, and continue/pivot/stop thresholds. On review, compare actual results with the baseline; retain, revise, or abandon the bottleneck hypothesis. Reopen deferred work only when its trigger fires or the user changes the goal.
+Preserve the agreed safety and quality minimums. A demo is not production. Relevant delivery requirements include representative evaluations, permissions, failure handling, human escalation, observability, recovery, and ownership. Neither remove these for speed nor turn them into unnecessary infrastructure work.
 
-Return the brief in chat by default; save it only in an agreed workspace when requested. Prioritization does not authorize spending, outreach, publishing, deployment, or executing the selected work. Hand execution to a suitable workflow only with user authorization.
+**Exit:** supporting resources reinforce the same effort; practice produces relevant capability or artifacts rather than opening a second path.
 
-**Exit:** one clear next step and a falsifiable review rule—not an endless interview.
+### 6. Make a focus commitment
+
+Only after the gates above, use [the focus brief](templates/priority-brief.md). State:
+- The confirmed purpose, outcome, optimization priority, and hard constraints.
+- The one current bottleneck and its supporting evidence.
+- One primary effort and its first concrete action.
+- Necessary support and maintenance, each bounded and justified.
+- What stops, what allocation is reclaimed, and where it goes.
+- Owner, timebox, observable artifact, and acceptance criterion.
+- Review event and evidence that warrants continuing, changing the diagnosis, or stopping.
+
+Do not append a broad roadmap or Next list. Focus is not doing every legitimate thing in a better order. It is excluding other pursuits while this constraint is being addressed. Be direct: “This does not support your stated objective; stop allocating this pursuit's resources to it.” Challenge the allocation, not the person's character. Respect a deliberate change of purpose; do not silently preserve incompatible goals.
+
+Return the brief in chat unless saving is requested. Planning does not authorize spending, cancellations, outreach, deployment, or execution. Review progress against the agreed bottleneck—not the volume of courses completed, tools configured, or plans written.
+
+**Exit:** the user can name what they are attacking, why it matters, what supports it, and what they are no longer doing.
 
 ## Pitfalls
 
-- **Goal substitution:** revenue is not mastery; mastery is not customer delivery. Do not silently exchange them.
-- **Tool-first anchoring:** neither n8n nor local LLMs are inherently the right first step.
-- **Premature optimization:** a real future need is not necessarily today's dependency.
-- **Speed without reliability:** include expected rework, human review, support, and failure costs.
-- **Analysis as avoidance:** stop when further answers would not change a safe, reversible next action.
-- **Overconfident coaching:** challenge the causal claim, not the person's motives or character.
-- **Universal prescriptions:** interviews are not always Now; existing customer evidence may make delivery or reliability the blocker.
+- **Premature prescription:** giving an action before establishing intent and constraints.
+- **Hypothesis laundering:** calling an agent's guess a validated bottleneck.
+- **Option inflation:** offering more paths when the user needs help excluding them.
+- **Sequencing as appeasement:** making every distraction a respectable future phase.
+- **Proxy optimization:** minimizing cost when cost is not the governing constraint.
+- **Learning detours:** practicing an adjacent discipline instead of the target work.
+- **False minimalism:** cutting necessary learning, tools, or safety because focus supposedly means one activity.
+- **Endless questioning:** re-asking settled questions instead of resolving a specific ambiguity and moving toward commitment.
 
 ## Verification
 
-Before returning the brief, check:
-- The outcome reflects the user's actual goal; facts and assumptions are separated.
-- The bottleneck has a causal explanation and a disconfirming observation.
-- Alternatives include a credible challenger; ranking respects constraints and opportunity cost.
-- Now removes a blocker or tests a decision-changing uncertainty, with owner, timebox, artifact, and acceptance criterion.
-- Safety and production requirements are neither bypassed nor overbuilt.
-- Deferred work has reasons and revisit triggers; the strongest alternative has a reversal condition.
-- Review criteria can change the recommendation; no execution or success is falsely claimed.
+Before prescribing, check that the hierarchy was explored, the frame confirmed, and the bottleneck jointly examined. Before returning a focus brief, check that one effort remains, each supporting allocation has a causal role, competing paths are explicitly stopped rather than sequenced, and review criteria can change the diagnosis. Never claim the user confirmed an assumption, a test proved more than it did, or a recommended cancellation/execution already happened.

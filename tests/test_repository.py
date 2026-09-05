@@ -41,12 +41,27 @@ class RepositoryTests(unittest.TestCase):
 
     def test_brief_contract(self):
         text = (SKILL.parent / "templates/priority-brief.md").read_text(encoding="utf-8")
-        for field in ("Baseline:", "Facts and sources:", "Assumptions:", "Current blocker hypothesis:",
+        for field in ("Baseline:", "Facts and sources:", "Assumptions:", "Current bottleneck and evidence:",
                       "Evidence that would disprove it:", "Reversal condition:", "## Now", "Owner (confirmed or proposed):",
                       "Timebox:", "Observable artifact:", "Acceptance criterion:", "Stop / pivot condition:",
                       "Revisit trigger", "## Review", "Execution authorization:"):
             with self.subTest(field=field):
                 self.assertIn(field, text)
+
+    def test_focus_contract(self):
+        text = SKILL.read_text(encoding="utf-8")
+        for requirement in ("### 1. Interview through the hierarchy", "**Purpose:**", "**Optimization:**",
+                            "**Resources and advantages:**", "**Constraints and risk:**", "**Confirmation gate:**",
+                            "do not recommend a focus until this frame is user-confirmed",
+                            "Do not turn Stop items into a sequenced backlog",
+                            "Do not create an unrelated project", "Do not append a broad roadmap or Next list"):
+            with self.subTest(requirement=requirement):
+                self.assertIn(requirement, text)
+        self.assertNotIn("Usually compare three to five", text)
+        template = (SKILL.parent / "templates/priority-brief.md").read_text(encoding="utf-8")
+        self.assertIn("User confirmation", template)
+        self.assertIn("Attack / Support / Maintain / Stop", template)
+        self.assertNotIn("## Next", template)
 
     def test_no_machine_local_paths_or_secret_tokens(self):
         for source in ROOT.rglob("*.md"):
