@@ -35,7 +35,7 @@ Do not fill this as a final recommendation before the confirmation gate. During 
 |---|---|---|---|
 | | | | |
 
-- Learning applied directly to this effort:
+- Necessary support and its contribution to this effort:
 - Where reclaimed resources go:
 - Not now within this path:
 - Not part of this path:

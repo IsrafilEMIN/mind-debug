@@ -54,10 +54,15 @@ class RepositoryTests(unittest.TestCase):
                             "**Resources and advantages:**", "**Constraints and risk:**", "**Confirmation gate:**",
                             "do not recommend a focus until this frame is user-confirmed",
                             "Do not turn Stop items into a sequenced backlog",
-                            "Do not create an unrelated project", "Do not append a broad roadmap or Next list"):
+                            "highest expected return toward the confirmed outcome", "Do not append a broad roadmap or Next list"):
             with self.subTest(requirement=requirement):
                 self.assertIn(requirement, text)
         self.assertNotIn("Usually compare three to five", text)
+        self.assertNotIn("Learn and practice on the chosen path", text)
+        self.assertEqual(re.findall(r"^### (\d+)\.", text, re.M), ["1", "2", "3", "4", "5"])
+        triggers = text.split("## When to Use\n", 1)[1].split("## Prerequisites", 1)[0]
+        self.assertNotIn("side projects", triggers.lower())
+        self.assertNotIn("learning", triggers.lower())
         template = (SKILL.parent / "templates/priority-brief.md").read_text(encoding="utf-8")
         self.assertIn("User confirmation", template)
         self.assertIn("Attack / Support / Maintain / Stop", template)

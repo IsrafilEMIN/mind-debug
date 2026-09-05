@@ -1,7 +1,7 @@
 ---
 name: prioritization
 description: "Use when clarifying goals and cutting distractions."
-version: 0.2.0
+version: 0.2.1
 author: IsrafilEMIN, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -17,16 +17,18 @@ Interview first. Establish what the user is actually pursuing, identify the cons
 
 ## When to Use
 
-- The user is busy across several activities but unsure which deserve attention.
-- Learning, spending, optimization, or side projects may serve competing directions.
-- The stated goal is broad, conflicting, or disconnected from actual allocations.
-- The user wants their priorities challenged, not another menu of possibilities.
+- Attention or effort is drifting away from what matters.
+- Competing possibilities make it difficult to choose and commit.
+- The intended direction is unclear, conflicting, or disconnected from current actions.
+- The user needs to determine what deserves focus and what to stop.
 
 Don't use for: overriding the user's values, policing leisure, replacing professional judgment, or reopening an agreed execution task without a material priority conflict.
 
 ## Prerequisites
 
 No platform-specific dependency. Read supplied context and prior decisions; use available read/search/calculation tools for relevant facts. Do not inspect unrelated private material. The user is the authority on their intent and acceptable trade-offs; neither web research nor memory can substitute for asking them.
+
+For an illustrative application, see [the SMB anchor](references/smb-ai-example.md). It is an example, not a restriction on where this skill applies.
 
 ## Procedure
 
@@ -39,7 +41,7 @@ Do not jump from an aspiration to a recommendation. Work through these layers in
 3. **Optimization:** What matters most when objectives conflict: speed, scalability, reliability, risk coverage, revenue, cost, mastery, or something else? Which are hard minimums rather than objectives to maximize? What will the user knowingly sacrifice?
 4. **Resources and advantages:** What time, money, runway, skills, access, relationships, assets, and existing work are actually available? Which advantages can be used now rather than acquired first?
 5. **Constraints and risk:** What obligations, deadlines, dependencies, permissions, capacity limits, and failure consequences apply? How much financial, operational, and reputational risk is acceptable? What must remain protected?
-6. **Current choices and allocations:** What can the user implement immediately? What are they already doing, learning, buying, maintaining, or considering? Include courses, subscriptions, hardware, side projects, and recurring attention costs. What does each consume and produce?
+6. **Current choices and allocations:** What can the user act on immediately? What commitments and possibilities currently compete for their resources? What does each consume and contribute toward the intended outcome?
 
 Ask a small coherent round, listen, then ask follow-ups. Group independent questions; defer questions whose meaning depends on an unanswered earlier layer. Probe vague answers and contradictions with concrete examples. Do not dump this entire checklist at once, impose a fixed interview length, or mechanically re-ask facts already settled.
 
@@ -73,7 +75,9 @@ When a critical factual uncertainty remains after the interview, identify it pre
 
 ### 4. Audit allocations and eliminate competing paths
 
-Evaluate existing choices against the confirmed direction and bottleneck. Do not generate a menu by default. Introduce an alternative only when it exposes a mistaken assumption or materially changes the focus decision.
+Evaluate existing choices against the confirmed direction and bottleneck. Choose the feasible option with the highest expected return toward the confirmed outcome for the resources committed, subject to the user's hard constraints and risk tolerance. Return means progress on what the user values, not necessarily money, speed, or short-term gains. Make uncertainty and opportunity cost explicit; do not invent ROI scores or guarantee an outcome.
+
+Do not generate a menu by default. Introduce an alternative only when it exposes a mistaken assumption or materially changes the focus decision.
 
 Classify each material allocation:
 - **Attack:** directly removes the current bottleneck.
@@ -81,25 +85,13 @@ Classify each material allocation:
 - **Maintain:** an unavoidable obligation or minimum operating requirement; protect its minimum allocation without turning it into a growth project.
 - **Stop:** pursues a different path, optimizes the wrong objective, addresses an unproven future need, or cannot justify its opportunity cost.
 
-Ask: “Which current deliverable does this serve? What would fail if it stopped? Why must it consume resources now?” Shared vocabulary is not alignment: two activities both involving AI can serve different careers, businesses, or technical directions.
+Ask: “Which current deliverable does this serve? What would fail if it stopped? Why must it consume resources now?” Similarity is not alignment: two activities in the same domain can pursue different outcomes.
 
 Do not turn Stop items into a sequenced backlog. Distinguish “not now within this path” from “not part of this path.” Neither receives active time or spending merely because it might be useful someday. Reconsider only when a material requirement or the user's purpose changes—not on a recurring invitation to reopen distractions.
 
 **Exit:** explicit keep/limit/stop decisions and the time, money, and attention to reclaim. If exact amounts are unknown, ask or label them unknown; do not invent savings. Recommend cancellations or pauses, but do not execute them without authorization.
 
-### 5. Learn and practice on the chosen path
-
-One focus can require several coordinated inputs. A course, model subscription, evaluation harness, and implementation practice may all support one applied-AI delivery effort. Do not confuse multiple tools with multiple directions—or accept every adjacent purchase as justified.
-
-For learning or spending, require a traceable chain: resource → skill or capability used now → work on the bottleneck → intended outcome. Apply learning to the actual target work, or a representative practice task with the same relevant requirements. Do not create an unrelated project to rationalize “learning by doing.” Learning that does not transfer into the current effort stays outside its allocation.
-
-For business/AI work, read [the SMB anchor](references/smb-ai-example.md). If the confirmed purpose is scaling reliable applied-AI delivery, evaluation and production practice may be aligned support. Local-model tinkering, hardware shopping, or premature inference-cost reduction are distractions unless evidence makes them necessary for that purpose now. A verified offline contract can reverse that judgment; speculative future savings cannot.
-
-Preserve the agreed safety and quality minimums. A demo is not production. Relevant delivery requirements include representative evaluations, permissions, failure handling, human escalation, observability, recovery, and ownership. Neither remove these for speed nor turn them into unnecessary infrastructure work.
-
-**Exit:** supporting resources reinforce the same effort; practice produces relevant capability or artifacts rather than opening a second path.
-
-### 6. Make a focus commitment
+### 5. Make a focus commitment
 
 Only after the gates above, use [the focus brief](templates/priority-brief.md). State:
 - The confirmed purpose, outcome, optimization priority, and hard constraints.
@@ -112,7 +104,7 @@ Only after the gates above, use [the focus brief](templates/priority-brief.md). 
 
 Do not append a broad roadmap or Next list. Focus is not doing every legitimate thing in a better order. It is excluding other pursuits while this constraint is being addressed. Be direct: “This does not support your stated objective; stop allocating this pursuit's resources to it.” Challenge the allocation, not the person's character. Respect a deliberate change of purpose; do not silently preserve incompatible goals.
 
-Return the brief in chat unless saving is requested. Planning does not authorize spending, cancellations, outreach, deployment, or execution. Review progress against the agreed bottleneck—not the volume of courses completed, tools configured, or plans written.
+Return the brief in chat unless saving is requested. Planning does not authorize spending, cancellations, outreach, deployment, or execution. Review progress against the agreed bottleneck—not the volume of activity or preparation. Preserve agreed safety and quality minimums; a focus commitment does not waive them.
 
 **Exit:** the user can name what they are attacking, why it matters, what supports it, and what they are no longer doing.
 
@@ -123,8 +115,7 @@ Return the brief in chat unless saving is requested. Planning does not authorize
 - **Option inflation:** offering more paths when the user needs help excluding them.
 - **Sequencing as appeasement:** making every distraction a respectable future phase.
 - **Proxy optimization:** minimizing cost when cost is not the governing constraint.
-- **Learning detours:** practicing an adjacent discipline instead of the target work.
-- **False minimalism:** cutting necessary learning, tools, or safety because focus supposedly means one activity.
+- **False minimalism:** cutting necessary support or safety because focus supposedly means one activity.
 - **Endless questioning:** re-asking settled questions instead of resolving a specific ambiguity and moving toward commitment.
 
 ## Verification

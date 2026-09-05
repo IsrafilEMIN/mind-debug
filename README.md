@@ -6,7 +6,7 @@ An interview-first agent skill for establishing a direction and concentrating ef
 
 ## Current revision
 
-**v0.2.0 is a local review draft.** It has not replaced the installed Hermes/OMP copies and has not been live-tested. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only. One-shot recommendation tests missed a real-use failure: the agent could rationalize distractions instead of clarifying intent and enforcing focus.
+**v0.2.1** generalizes the distraction triggers and removes the redundant learning/practice phase. The interview-first revision is ready for renewed user testing; its multi-turn behavior has not yet been validated. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only. One-shot recommendation tests missed a real-use failure: the agent could rationalize distractions instead of clarifying intent and enforcing focus.
 
 ## How it works
 
@@ -14,8 +14,7 @@ An interview-first agent skill for establishing a direction and concentrating ef
 2. Obtain confirmation of the decision frame before prescribing.
 3. Establish the current bottleneck with the user, grounded in actual attempts and evidence.
 4. Classify allocations as **Attack, Support, Maintain, or Stop**. Exclude competing paths rather than scheduling them for later.
-5. Apply learning to the target work. Several necessary resources can support one effort; unrelated practice projects do not become aligned just because they teach something.
-6. Produce a focus commitment only when the preceding gates are satisfied.
+5. Commit to one feasible option with the highest expected return toward the confirmed outcome, preserving constraints and necessary support.
 
 The [SMB anchor](skills/prioritization/references/smb-ai-example.md) distinguishes learning/evals/subscriptions used for applied-AI delivery from local-inference tinkering for speculative savings. Actual offline requirements can change the judgment; generic future usefulness cannot.
 
@@ -33,17 +32,19 @@ The [SMB anchor](skills/prioritization/references/smb-ai-example.md) distinguish
 python3 -m unittest discover -s tests -v
 ```
 
-Structural checks verify packaging and explicit contract fields, not interviewing quality. Multi-turn behavioral evaluation of v0.2.0 is pending review.
+Structural checks verify packaging and explicit contract fields, not interviewing quality. Multi-turn behavioral evaluation of v0.2.1 remains pending.
 
 ## Installation and invocation
 
-The published/installed version remains v0.1.0 until this review draft is approved and distributed.
+Use the current published skill; update installed snapshots explicitly when the repository changes.
 
 Hermes, default profile:
 
 ```sh
 hermes skills install IsrafilEMIN/prioritization/skills/prioritization --yes
 ```
+
+For an existing installation: `hermes skills update prioritization`.
 
 In a new Hermes session: `/prioritization <your situation>`.
 
@@ -53,7 +54,7 @@ Installed copies are snapshots, not automatically synchronized with this reposit
 
 ## Try the interview
 
-> I want to scale applied AI, but my time is split between evals, courses, local LLM work, and side projects. Help me clarify what I am actually pursuing and what needs to stop. Do not infer my bottleneck before asking about my intent and circumstances.
+> I keep getting pulled toward different possibilities and am not making progress on what matters. Help me clarify my purpose, choose what deserves my commitment, and decide what to stop.
 
 Expect questions first, not a menu or immediate recommendation.
 
