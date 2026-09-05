@@ -4,11 +4,14 @@ Do not fill this as a final recommendation before the confirmation gate. During 
 
 ## Confirmed frame
 - Purpose / beneficiary:
-- Outcome and success measure:
+- Long-term direction and why it matters:
+- Required capabilities / conditions and causal link to that direction:
+- Derived next milestone and success measure:
 - Baseline:
 - Primary optimization and accepted sacrifices:
 - Hard minimums / protected obligations:
-- Resources, advantages, and immediately feasible choices:
+- Resources and evidenced or provisional advantages:
+- Learnable gaps and realistic means of acquiring capabilities:
 - Constraints and risk tolerance:
 - User confirmation (quote or faithful paraphrase):
 

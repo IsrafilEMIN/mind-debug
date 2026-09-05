@@ -1,7 +1,7 @@
 ---
 name: prioritization
 description: "Use when clarifying goals and cutting distractions."
-version: 0.2.2
+version: 0.3.0
 author: IsrafilEMIN, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -34,14 +34,16 @@ For an illustrative application, see [the SMB anchor](references/smb-ai-example.
 
 ### 1. Interview through the hierarchy
 
-Do not jump from an aspiration to a recommendation. Work through these layers in order, carrying the answers forward:
+Help discover direction rather than demand a finished ambition. The hierarchy is a reasoning dependency, not a questionnaire to recite. Gather concrete evidence where the user can supply it, synthesize its implications, and return to unresolved earlier layers.
 
-1. **Purpose:** Why does this matter? Who is it for? What is the user ultimately trying to change or become? Which competing ambitions are explicitly outside this pursuit?
-2. **Outcome:** What concrete result would count as success? What is the current state, desired state, and relevant horizon? Distinguish an outcome from a tool, course, project, or identity label.
-3. **Optimization:** What matters most when objectives conflict: speed, scalability, reliability, risk coverage, revenue, cost, mastery, or something else? Which are hard minimums rather than objectives to maximize? What will the user knowingly sacrifice?
-4. **Resources and advantages:** What time, money, runway, skills, access, relationships, assets, and existing work are actually available? Which advantages can be used now rather than acquired first?
-5. **Constraints and risk:** What obligations, deadlines, dependencies, permissions, capacity limits, and failure consequences apply? How much financial, operational, and reputational risk is acceptable? What must remain protected?
-6. **Current choices and allocations:** What can the user act on immediately? What commitments and possibilities currently compete for their resources? What does each consume and contribute toward the intended outcome?
+1. **Purpose:** When direction is unclear, start from lived experiences, recurring frustrations, meaningful achievements, responsibilities, and what the user wants their work or life to make possible. Reflect patterns as tentative interpretations and invite correction. Uncertainty is a starting condition, not unwillingness to commit; the agent helps synthesize rather than outsourcing that synthesis to the user.
+2. **Outcome:** Establish the enduring change or position the user wants to build toward, ordinarily over five to ten years for an open-ended life or career pursuit. This is a direction, not a forecast or a demand for precise distant targets. Distinguish the underlying purpose from an aspirational number or status label. Respect an already-set purpose and genuine external deadlines; execution timeboxes come later and do not define purpose.
+3. **Optimization:** Ground trade-offs in what the desired future makes valuable and what must remain protected. Use concrete tensions from the user's context to establish which objective governs, rather than requiring abstract rankings detached from consequences.
+4. **Resources and advantages:** Establish the starting position: assets, runway, relationships, access, experience, transferable strengths, and evidence of learning ability. Surface overlooked intellectual or practical advantages through examples of actual performance, not invented talent labels. Remember that current skills are a baseline, not a ceiling: distinguish usable strengths from capabilities that can be learned, practiced, acquired, or accessed through others, with realistic costs and uncertainty.
+5. **Constraints and risk:** Separate hard limits and protected obligations from changeable conditions and untested assumptions. Include debt, financial commitments, health, dependencies, and failure consequences where relevant. Separate willingness to commit from practical capacity: commitment chooses the direction; actual obligations and capacity bound a sustainable execution plan. Quantify capacity when it changes feasibility or scope, not as a proxy for seriousness.
+6. **Requirements and current allocations:** Work backward from that direction to the capabilities, access, evidence, and conditions it requires; compare these with the starting position. Distinguish essential gaps from speculative future needs and identify the nearest meaningful prerequisite. A feasible next step can build a missing capability rather than monetize an existing one. Inventory competing allocations without demanding that the user preselect what to abandon. Keep the dependency chain only as detailed as needed to locate the current constraint, not a comprehensive roadmap.
+
+**Question-quality gate:** Every question must resolve a specific uncertainty in the developing decision frame, be answerable from the user's experience or considered preferences, and have an identifiable consequence for the analysis. If it asks the user to supply the conclusion the agent should help derive, break it into concrete evidence and synthesize together. Do not disguise a diagnosis or commitment demand as a neutral choice. When the user does not know, change the level of inquiry rather than repeating the abstraction. Near-term milestones must follow from requirements and reality; a desired number alone establishes neither feasibility nor a path.
 
 Ask a small coherent round, listen, then ask follow-ups. Group independent questions; defer questions whose meaning depends on an unanswered earlier layer. Probe vague answers and contradictions with concrete examples. Do not dump this entire checklist at once, impose a fixed interview length, or mechanically re-ask facts already settled.
 
@@ -51,7 +53,7 @@ Use the host's interactive question tool when available (Hermes: `clarify`; OMP:
 
 ### 2. Confirm the decision frame before prescribing
 
-Reflect back: “You are pursuing X, optimizing primarily for Y, while preserving Z, with these resources and constraints. These other pursuits are not part of this commitment.” Ask the user to correct or confirm it. Surface contradictions rather than smoothing them over.
+Reflect back the discovered long-term direction, why it matters, governing trade-offs, starting position, and distinction between hard limits and learnable gaps. Ask the user to correct or confirm this frame; do not bundle agreement with premature exclusions. Surface contradictions rather than smoothing them over.
 
 **Confirmation gate:** do not recommend a focus until this frame is user-confirmed. Explicit confirmation already present in the conversation counts; do not demand a ritual extra turn. Silence, missing information, and an agent's plausible interpretation do not count.
 
@@ -61,7 +63,7 @@ If the user explicitly requests a provisional answer without questions, label as
 
 ### 3. Establish the current bottleneck with the user
 
-Ask what specifically prevents the next meaningful result today. Examine recent attempts, actual failures, unfinished deliverables, feedback, and dependencies. Work backward from the confirmed outcome, not forward from the user's favorite tool.
+Derive the next meaningful milestone from the confirmed direction's necessary conditions and the actual starting position. Examine recent attempts, failures, unfinished deliverables, feedback, and dependencies with the user to locate what prevents that milestone. The user need not know the bottleneck in advance. Separate a requirement inferred from the path from a blocker demonstrated by evidence; work backward from the confirmed outcome, not forward from a favorite tool or an arbitrary near-term target.
 
 Challenge each proposed blocker:
 - If it disappeared tomorrow, what meaningful progress would become possible?
@@ -78,6 +80,8 @@ When a critical factual uncertainty remains after the interview, identify it pre
 ### 4. Audit allocations and eliminate competing paths
 
 Evaluate existing choices against the confirmed direction and bottleneck. Choose the feasible option with the highest expected return toward the confirmed outcome for the resources committed, subject to the user's hard constraints and risk tolerance. Return means progress on what the user values, not necessarily money, speed, or short-term gains. Make uncertainty and opportunity cost explicit; do not invent ROI scores or guarantee an outcome.
+
+Exclusion follows causal analysis: explain how an allocation serves or competes with the confirmed direction, which scarce resource it consumes, and what it displaces before seeking agreement to stop it. Technical buildability or low implementation cost does not establish strategic value; include adoption, operation, maintenance, and attention costs where material. Invite correction of the reasoning rather than testing willingness to renounce possibilities.
 
 Do not generate a menu by default. Introduce an alternative only when it exposes a mistaken assumption or materially changes the focus decision.
 
@@ -96,7 +100,8 @@ Do not turn Stop items into a sequenced backlog. Distinguish “not now within t
 ### 5. Make a focus commitment
 
 Only after the gates above, use [the focus brief](templates/priority-brief.md). State:
-- The confirmed purpose, outcome, optimization priority, and hard constraints.
+- The confirmed long-term direction, purpose, optimization priority, and hard constraints.
+- The derived next milestone, required capabilities, and relevant learnable gaps.
 - The one current bottleneck and its supporting evidence.
 - One primary effort and its first concrete action.
 - Necessary support and maintenance, each bounded and justified.
@@ -122,4 +127,4 @@ Return the brief in chat unless saving is requested. Planning does not authorize
 
 ## Verification
 
-Before prescribing, check that the hierarchy was explored, the frame confirmed, and the bottleneck jointly examined. Before returning a focus brief, check that one effort remains, each supporting allocation has a causal role, competing paths are explicitly stopped rather than sequenced, and review criteria can change the diagnosis. Never claim the user confirmed an assumption, a test proved more than it did, or a recommended cancellation/execution already happened.
+Before prescribing, check that direction was discovered from context rather than demanded, near-term milestones were derived rather than arbitrarily targeted, learnable gaps were distinguished from hard limits, the frame was confirmed, and the bottleneck jointly examined. Exclusions must follow causal analysis, not precede it. Before returning a focus brief, check that one effort remains, each supporting allocation has a causal role, competing paths are explicitly stopped rather than sequenced, and review criteria can change the diagnosis. Never claim the user confirmed an assumption, a test proved more than it did, or a recommended cancellation/execution already happened.

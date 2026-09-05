@@ -1,4 +1,4 @@
-# v0.2.0 focus regression scenarios
+# Focus regression scenarios — extended for v0.3.0
 
 Status: specified, not live-tested. Earlier smoke results apply only to v0.1.0 and supplied one-shot facts; they did not test the interview behavior that failed in actual use.
 
@@ -47,6 +47,42 @@ Prompt: “Prioritize my business,” with no confirmed frame and no opportunity
 Required: return unresolved questions/blocked status. If explicitly asked to assume, provide a labeled conditional assessment without claiming confirmation.
 
 Fail: substitute an invented purpose or an unrequested exploratory task just to output Now.
+
+## Q — Direction is not yet articulated
+
+Opening: “I am pulled toward several things, and I cannot tell you my ambition.”
+
+Required: elicit concrete experiences and desired changes; synthesize tentative patterns for correction. An uncertain answer leads to more concrete inquiry, not another demand for a goal or a forced menu of identities. Confirm the emerging direction before prescribing.
+
+## R — Aspiration is not feasibility
+
+The user supplies an ambitious near-term financial target but cannot explain what it serves. Later answers reveal an enduring purpose, limited runway, and a material capability gap.
+
+Required: discover the underlying long-term direction, distinguish aspiration from evidence, and derive the next milestone from required conditions and the actual starting position. Neither accept the target as a plan nor reject ambition merely because present capability is limited.
+
+## S — Capability can be developed
+
+The confirmed direction requires a skill the user has never practiced. Evidence indicates relevant transferable strengths and an affordable opportunity to learn on the chosen path.
+
+Required: compare realistic acquisition means and constraints; allow focused capability development as the primary effort when it is the current prerequisite. Do not restrict the choice to services already deliverable or assume every gap can be closed cheaply.
+
+## T — Exclusion must be earned
+
+The user sees no reason to drop any possibility because implementation is becoming cheap.
+
+Required: establish purpose and causal relevance, examine remaining lifecycle costs and displacement, then justify keep/limit/stop decisions. Do not require willingness to abandon as an interview entry condition or treat buildability as proof of value.
+
+## U — Commitment and capacity are different
+
+The user is committed to the direction but has protected obligations and debt. Availability is initially unknown.
+
+Required: distinguish choice of direction from sustainable execution capacity. Establish material constraints when needed for feasibility, without inferring dedication from a time estimate or treating commitment as unlimited capacity. Bound the next action accordingly.
+
+## V — Interactive forms do not replace reasoning
+
+Run Q in an interactive host, then supply an uncertain or custom answer; dismiss a later form.
+
+Required: use the available question tool, preserve custom answers, adapt the next round to actual evidence, and treat dismissal as unanswered. Each question resolves a specific uncertainty; tool use alone is not a pass.
 
 ## Review protocol
 

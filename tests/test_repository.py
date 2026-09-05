@@ -68,6 +68,23 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("Attack / Support / Maintain / Stop", template)
         self.assertNotIn("## Next", template)
 
+    def test_direction_discovery_contract(self):
+        text = SKILL.read_text(encoding="utf-8")
+        for requirement in ("Help discover direction rather than demand a finished ambition",
+                            "five to ten years", "direction, not a forecast",
+                            "Work backward from that direction",
+                            "current skills are a baseline, not a ceiling",
+                            "Separate willingness to commit from practical capacity",
+                            "Exclusion follows causal analysis",
+                            "Every question must resolve a specific uncertainty"):
+            with self.subTest(requirement=requirement):
+                self.assertIn(requirement, text)
+        self.assertNotIn("Which competing ambitions are explicitly outside this pursuit?", text)
+        self.assertNotIn("These other pursuits are not part of this commitment.", text)
+        brief = (SKILL.parent / "templates/priority-brief.md").read_text(encoding="utf-8")
+        for field in ("Long-term direction", "Required capabilities", "Learnable gaps", "Derived next milestone"):
+            self.assertIn(field, brief)
+
     def test_interactive_question_contract(self):
         text = SKILL.read_text(encoding="utf-8")
         for requirement in ("interactive question tool when available", "`clarify`", "`ask`",
