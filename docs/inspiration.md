@@ -27,4 +27,4 @@ These are conceptual influences. No upstream implementation or substantial text 
 
 ## Portability boundary
 
-The payload is Markdown with YAML frontmatter and relative references. This is intended to be host-neutral; actual discovery, installation, and behavior in Hermes and OMP remain untested. No Hermes repository-specific documentation generator or runtime code is included in this standalone repository.
+The payload is Markdown with YAML frontmatter and relative references. Default-profile installation and two behavioral smoke cases have been exercised in Hermes and OMP; see [results and limitations](smoke-results.md). This does not establish universal host/model compatibility. No Hermes repository-specific documentation generator or runtime code is included in this standalone repository.

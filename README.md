@@ -56,7 +56,23 @@ Expected output: an outcome statement, evidence and assumptions, bottleneck, com
 python3 -m unittest discover -s tests -v
 ```
 
-**Initial draft, v0.1.0.** Structural tests cover packaging and required decision-contract fields. Behavioral scenarios are specified but have not been run in Hermes or OMP. Installation, runtime discovery, and cross-agent behavioral testing are deliberately deferred. No install-command compatibility is claimed yet.
+**Initial draft, v0.1.0.** Six structural checks pass. The skill is installed and has produced the expected decisions in two live smoke scenarios on both Hermes and OMP. This is not a full behavioral-suite pass: OMP generated complete briefs but its CLI had output/termination issues. See [smoke results](docs/smoke-results.md).
+
+### Install and invoke
+
+Hermes (default profile):
+
+```sh
+hermes skills install IsrafilEMIN/prioritization/skills/prioritization --yes
+```
+
+In a **new Hermes session**: `/prioritization <your goal and competing activities>`.
+
+OMP (default profile): copy the complete `skills/prioritization` directory into `~/.omp/agent/skills/prioritization`, preserving `references/` and `templates/`. Do not overwrite an existing installation without comparing it first. Custom profiles may use different directories.
+
+In a **new OMP session**: `/skill:prioritization <your goal and competing activities>`.
+
+Installed copies are snapshots, not automatically synchronized with this repository.
 
 ## Design influences
 
