@@ -1,7 +1,7 @@
 ---
 name: prioritization
 description: "Use when clarifying goals and cutting distractions."
-version: 0.2.1
+version: 0.2.2
 author: IsrafilEMIN, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
@@ -44,6 +44,8 @@ Do not jump from an aspiration to a recommendation. Work through these layers in
 6. **Current choices and allocations:** What can the user act on immediately? What commitments and possibilities currently compete for their resources? What does each consume and contribute toward the intended outcome?
 
 Ask a small coherent round, listen, then ask follow-ups. Group independent questions; defer questions whose meaning depends on an unanswered earlier layer. Probe vague answers and contradictions with concrete examples. Do not dump this entire checklist at once, impose a fixed interview length, or mechanically re-ask facts already settled.
+
+Use the host's interactive question tool when available (Hermes: `clarify`; OMP: `ask` in interactive sessions), following its actual schema. Put selectable answers in the tool's choice fields, not merely in question prose. Offer concise, neutral choices where useful and always allow a custom answer; use the built-in free-text/Other facility or an open-ended follow-up if needed. Prefer open-ended questions when predefined choices would bias the user's purpose or intent. Batch independent questions into one asking round where supported; wait for answers before asking dependent questions. If the tool is unavailable, ask in chat and wait instead. A dismissed, timed-out, or unanswered form is not an answer or confirmation.
 
 **Exit:** enough specific answers to explain the intended direction, governing trade-offs, practical limits, and competing commitments. A vague opening prompt normally calls for questions—not a priority brief.
 

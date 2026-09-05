@@ -68,6 +68,15 @@ class RepositoryTests(unittest.TestCase):
         self.assertIn("Attack / Support / Maintain / Stop", template)
         self.assertNotIn("## Next", template)
 
+    def test_interactive_question_contract(self):
+        text = SKILL.read_text(encoding="utf-8")
+        for requirement in ("interactive question tool when available", "`clarify`", "`ask`",
+                            "always allow a custom answer", "predefined choices would bias",
+                            "wait for answers before asking dependent questions",
+                            "ask in chat and wait instead", "unanswered form is not an answer"):
+            with self.subTest(requirement=requirement):
+                self.assertIn(requirement, text)
+
     def test_no_machine_local_paths_or_secret_tokens(self):
         for source in ROOT.rglob("*.md"):
             text = source.read_text(encoding="utf-8")

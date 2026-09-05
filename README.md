@@ -6,7 +6,7 @@ An interview-first agent skill for establishing a direction and concentrating ef
 
 ## Current revision
 
-**v0.2.1** generalizes the distraction triggers and removes the redundant learning/practice phase. The interview-first revision is ready for renewed user testing; its multi-turn behavior has not yet been validated. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only. One-shot recommendation tests missed a real-use failure: the agent could rationalize distractions instead of clarifying intent and enforcing focus.
+**v0.2.2** adds tool-based asking rounds with selectable choices and custom answers, using open-ended questions where choices would bias intent. It retains the generalized distraction triggers and five-step focus procedure. The interview-first revision is ready for renewed user testing; its multi-turn behavior has not yet been validated. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only. One-shot recommendation tests missed a real-use failure: the agent could rationalize distractions instead of clarifying intent and enforcing focus.
 
 ## How it works
 
@@ -32,7 +32,7 @@ The [SMB anchor](skills/prioritization/references/smb-ai-example.md) distinguish
 python3 -m unittest discover -s tests -v
 ```
 
-Structural checks verify packaging and explicit contract fields, not interviewing quality. Multi-turn behavioral evaluation of v0.2.1 remains pending.
+Structural checks verify packaging and explicit contract fields, not interviewing quality. Multi-turn behavioral evaluation of v0.2.2 remains pending.
 
 ## Installation and invocation
 
