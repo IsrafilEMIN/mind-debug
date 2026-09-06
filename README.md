@@ -6,7 +6,7 @@ An interview-first agent skill for establishing a direction and concentrating ef
 
 ## Current revision
 
-**v0.4.0** replaces the detailed procedure with a compact thinking frame: direction, starting position, causal priority, and justified exclusion. The conversation adapts to the uncertainty instead of following a checklist. This is a local review draft; published and installed copies have not been updated.
+**v0.4.0** replaces the detailed procedure with a compact thinking frame: direction, starting position, causal priority, and justified exclusion. The conversation adapts to the uncertainty instead of following a checklist. Published under the new name `mind-debug`; default Hermes and OMP installations use this name.
 
 Detailed scenarios stay in evaluations, not the default skill payload. The template and domain reference are optional reviewer aids, not required context. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only; the compact revision has not been live-tested.
 
