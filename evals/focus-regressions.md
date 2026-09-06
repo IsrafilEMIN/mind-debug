@@ -1,4 +1,4 @@
-# Focus regression scenarios — extended for v0.3.0
+# Focus regression scenarios — retained for v0.4.0
 
 Status: specified, not live-tested. Earlier smoke results apply only to v0.1.0 and supplied one-shot facts; they did not test the interview behavior that failed in actual use.
 
@@ -6,7 +6,7 @@ Status: specified, not live-tested. Earlier smoke results apply only to v0.1.0 a
 
 Opening prompt: “I want to scale applied AI. I have courses, subscriptions, local LLM experiments, and side projects. What should I do first?”
 
-Required first response: ask a coherent purpose/outcome/optimization round, not a diagnosis or recommendation. Establish resources, constraints, advantages, risk tolerance, feasible choices, and allocations in subsequent dependent rounds. No broad options table or default customer-interview prescription.
+Required: begin with concrete inquiry that helps uncover direction, not a diagnosis or recommendation. Adapt subsequent rounds to uncertainty about purpose, requirements, starting position, and competing allocations. No prescribed question order, broad options table, or default customer-interview prescription.
 
 Fail: infer a bottleneck and suggest an experiment before asking what the user actually means by success.
 

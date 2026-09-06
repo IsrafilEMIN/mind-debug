@@ -6,15 +6,13 @@ An interview-first agent skill for establishing a direction and concentrating ef
 
 ## Current revision
 
-**v0.3.0** replaces questionnaire-style interviewing with assisted discovery of long-term direction, backward reasoning from requirements, learnable capability gaps, and evidence-based exclusions. Interactive asking rounds and the five-step focus procedure remain. The interview-first revision is ready for renewed user testing; its multi-turn behavior has not yet been validated. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only. One-shot recommendation tests missed a real-use failure: the agent could rationalize distractions instead of clarifying intent and enforcing focus.
+**v0.4.0** replaces the detailed procedure with a compact thinking frame: direction, starting position, causal priority, and justified exclusion. The conversation adapts to the uncertainty instead of following a checklist. This is a local review draft; published and installed copies have not been updated.
+
+Detailed scenarios stay in evaluations, not the default skill payload. The template and domain reference are optional reviewer aids, not required context. The [earlier smoke results](docs/smoke-results.md) concern v0.1.0 only; the compact revision has not been live-tested.
 
 ## How it works
 
-1. Discover purpose and long-term direction from concrete experience; establish trade-offs, resources, advantages, and constraints, then work backward through required capabilities to the next meaningful milestone.
-2. Obtain confirmation of the decision frame before prescribing.
-3. Establish the current bottleneck with the user, grounded in actual attempts and evidence.
-4. Classify allocations as **Attack, Support, Maintain, or Stop**. Exclude competing paths rather than scheduling them for later.
-5. Commit to one feasible option with the highest expected return toward the confirmed outcome, preserving constraints and necessary support.
+Discover and confirm direction, reason from requirements and reality, and concentrate on the current constraint. Preserve necessary support while excluding competing pursuits. Interactive questions serve the reasoning, not a prescribed interview sequence.
 
 The [SMB anchor](skills/prioritization/references/smb-ai-example.md) distinguishes learning/evals/subscriptions used for applied-AI delivery from local-inference tinkering for speculative savings. Actual offline requirements can change the judgment; generic future usefulness cannot.
 
@@ -32,7 +30,7 @@ The [SMB anchor](skills/prioritization/references/smb-ai-example.md) distinguish
 python3 -m unittest discover -s tests -v
 ```
 
-Structural checks verify packaging and explicit contract fields, not interviewing quality. Multi-turn behavioral evaluation of v0.3.0 remains pending.
+Structural checks verify packaging and explicit contract fields, not interviewing quality. Multi-turn behavioral evaluation of v0.4.0 remains pending.
 
 ## Installation and invocation
 

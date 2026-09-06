@@ -36,7 +36,7 @@ class RepositoryTests(unittest.TestCase):
 
     def test_skill_has_required_sections(self):
         text = SKILL.read_text(encoding="utf-8")
-        for title in ("When to Use", "Prerequisites", "Procedure", "Pitfalls", "Verification"):
+        for title in ("When to Use", "Thinking Frame", "Dialogue", "Pitfalls", "Verification"):
             self.assertIn(f"## {title}\n", text)
 
     def test_brief_contract(self):
@@ -48,51 +48,33 @@ class RepositoryTests(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertIn(field, text)
 
-    def test_focus_contract(self):
+    def test_compact_frame_contract(self):
         text = SKILL.read_text(encoding="utf-8")
-        for requirement in ("### 1. Interview through the hierarchy", "**Purpose:**", "**Optimization:**",
-                            "**Resources and advantages:**", "**Constraints and risk:**", "**Confirmation gate:**",
-                            "do not recommend a focus until this frame is user-confirmed",
-                            "Do not turn Stop items into a sequenced backlog",
-                            "highest expected return toward the confirmed outcome", "Do not append a broad roadmap or Next list"):
-            with self.subTest(requirement=requirement):
-                self.assertIn(requirement, text)
-        self.assertNotIn("Usually compare three to five", text)
-        self.assertNotIn("Learn and practice on the chosen path", text)
-        self.assertEqual(re.findall(r"^### (\d+)\.", text, re.M), ["1", "2", "3", "4", "5"])
-        triggers = text.split("## When to Use\n", 1)[1].split("## Prerequisites", 1)[0]
-        self.assertNotIn("side projects", triggers.lower())
-        self.assertNotIn("learning", triggers.lower())
-        template = (SKILL.parent / "templates/priority-brief.md").read_text(encoding="utf-8")
-        self.assertIn("User confirmation", template)
-        self.assertIn("Attack / Support / Maintain / Stop", template)
-        self.assertNotIn("## Next", template)
+        self.assertLessEqual(len(text.split()), 650)
+        self.assertNotIn("## Procedure", text)
+        self.assertNotRegex(text, r"(?m)^### \d+\.")
+        for principle in ("Direction gives value; reality determines the next move",
+                          "The starting position is not the ceiling",
+                          "Priority is causal, not attractive",
+                          "Exclusion is a conclusion, not an entry requirement"):
+            self.assertIn(principle, text)
 
-    def test_direction_discovery_contract(self):
+    def test_decision_safeguards(self):
         text = SKILL.read_text(encoding="utf-8")
-        for requirement in ("Help discover direction rather than demand a finished ambition",
-                            "five to ten years", "direction, not a forecast",
-                            "Work backward from that direction",
-                            "current skills are a baseline, not a ceiling",
-                            "Separate willingness to commit from practical capacity",
-                            "Exclusion follows causal analysis",
-                            "Every question must resolve a specific uncertainty"):
-            with self.subTest(requirement=requirement):
-                self.assertIn(requirement, text)
-        self.assertNotIn("Which competing ambitions are explicitly outside this pursuit?", text)
-        self.assertNotIn("These other pursuits are not part of this commitment.", text)
-        brief = (SKILL.parent / "templates/priority-brief.md").read_text(encoding="utf-8")
-        for field in ("Long-term direction", "Required capabilities", "Learnable gaps", "Derived next milestone"):
-            self.assertIn(field, brief)
+        for requirement in ("before recommending a focus", "Examine the bottleneck together",
+                            "distinguish evidence, inference, and uncertainty",
+                            "one primary effort and next concrete action",
+                            "what stays and what stops", "changed evidence",
+                            "recommendations do not authorize external actions"):
+            self.assertIn(requirement, text)
 
     def test_interactive_question_contract(self):
         text = SKILL.read_text(encoding="utf-8")
         for requirement in ("interactive question tool when available", "`clarify`", "`ask`",
-                            "always allow a custom answer", "predefined choices would bias",
-                            "wait for answers before asking dependent questions",
-                            "ask in chat and wait instead", "unanswered form is not an answer"):
-            with self.subTest(requirement=requirement):
-                self.assertIn(requirement, text)
+                            "custom-answer route", "choices would bias intent",
+                            "wait before dependent rounds", "Fall back to chat",
+                            "unanswered questions are not confirmation"):
+            self.assertIn(requirement, text)
 
     def test_no_machine_local_paths_or_secret_tokens(self):
         for source in ROOT.rglob("*.md"):
