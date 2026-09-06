@@ -24,9 +24,9 @@ OMP JSON tool events confirm successful reads of `SKILL.md`, `references/smb-ai-
 
 ## Invocation and capture
 
-Hermes used `hermes chat --oneshot -Q -s prioritization --max-turns 8 --run-budget 180 -q '<scenario>'`.
+Hermes used `hermes chat --oneshot -Q -s mind-debug --max-turns 8 --run-budget 180 -q '<scenario>'`.
 
-OMP used `omp -p --mode=json --no-session --no-title --no-extensions --no-rules --no-lsp --tools=read --skills=prioritization --max-time=180 '/skill:prioritization <scenario>'`.
+OMP used `omp -p --mode=json --no-session --no-title --no-extensions --no-rules --no-lsp --tools=read --skills=mind-debug --max-time=180 '/skill:mind-debug <scenario>'`.
 
 The OMP tool filter limits built-in tools to reads. Hermes used its configured tools, with a read-only instruction in the prompt; this is not an equivalent tool-enforced sandbox. Both hosts retained existing provider configuration. OMP's configured continuation/advisor behavior was present, so this is a host integration trial, not an isolated measurement of the skill alone.
 
@@ -34,7 +34,7 @@ The OMP tool filter limits built-in tools to reads. Hermes used its configured t
 
 - Initial OMP text-mode captures contained only short closing verification messages, not the substantive briefs. One initial OMP process timed out. Those attempts were not counted as complete brief evidence.
 - JSON retries captured complete substantive briefs, successful skill/reference reads, and `agent_end` events. The host also emitted a continuation message and closing summary. Agent completion and OS-process termination are separate; the outer runner imposed a timeout because OMP did not exit promptly. Do not call this a clean CLI end-to-end pass.
-- Standalone `omp read skill://prioritization` reported no skills, while fresh agent-session discovery and reads succeeded. Do not use that standalone command as the sole installation check.
+- Standalone `omp read skill://mind-debug` reported no skills, while fresh agent-session discovery and reads succeeded. Do not use that standalone command as the sole installation check.
 - Hermes warned that existing gateways may still use pre-update modules. No update or gateway restart was performed; these tests used new CLI processes.
 
 Raw transcripts and the local runner remain in ignored `evals/runs/`; they are not published. This report contains only fictional-scenario summaries, no client data or private runtime metadata.

@@ -1,4 +1,4 @@
-# Prioritization
+# Mind Debug
 
 **Clarify the purpose. Attack the current bottleneck. Stop funding competing paths.**
 
@@ -14,12 +14,12 @@ Detailed scenarios stay in evaluations, not the default skill payload. The templ
 
 Discover and confirm direction, reason from requirements and reality, and concentrate on the current constraint. Preserve necessary support while excluding competing pursuits. Interactive questions serve the reasoning, not a prescribed interview sequence.
 
-The [SMB anchor](skills/prioritization/references/smb-ai-example.md) distinguishes learning/evals/subscriptions used for applied-AI delivery from local-inference tinkering for speculative savings. Actual offline requirements can change the judgment; generic future usefulness cannot.
+The [SMB anchor](skills/mind-debug/references/smb-ai-example.md) distinguishes learning/evals/subscriptions used for applied-AI delivery from local-inference tinkering for speculative savings. Actual offline requirements can change the judgment; generic future usefulness cannot.
 
 ## Files
 
-- [SKILL.md](skills/prioritization/SKILL.md) — complete agent instructions.
-- [Focus brief](skills/prioritization/templates/priority-brief.md) — used after confirmation, not instead of interviewing.
+- [SKILL.md](skills/mind-debug/SKILL.md) — complete agent instructions.
+- [Focus brief](skills/mind-debug/templates/priority-brief.md) — used after confirmation, not instead of interviewing.
 - [Focus regressions](evals/focus-regressions.md) — new multi-turn test specifications, not passing results.
 - [Original scenarios](evals/scenarios.md) — earlier coverage.
 - [Inspiration](docs/inspiration.md) — source notes.
@@ -39,14 +39,14 @@ Use the current published skill; update installed snapshots explicitly when the 
 Hermes, default profile:
 
 ```sh
-hermes skills install IsrafilEMIN/prioritization/skills/prioritization --yes
+hermes skills install IsrafilEMIN/mind-debug/skills/mind-debug --yes
 ```
 
-For an existing installation: `hermes skills update prioritization`.
+For an existing installation: `hermes skills update mind-debug`.
 
-In a new Hermes session: `/prioritization <your situation>`.
+In a new Hermes session: `/mind-debug <your situation>`.
 
-OMP, default profile: copy the complete approved `skills/prioritization` directory into `~/.omp/agent/skills/prioritization`, preserving relative references and templates. Compare before overwriting an existing installation. In a new session: `/skill:prioritization <your situation>`.
+OMP, default profile: copy the complete approved `skills/mind-debug` directory into `~/.omp/agent/skills/mind-debug`, preserving relative references and templates. Compare before overwriting an existing installation. In a new session: `/skill:mind-debug <your situation>`.
 
 Installed copies are snapshots, not automatically synchronized with this repository. Other profiles may use different paths.
 

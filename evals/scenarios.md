@@ -1,6 +1,6 @@
 # Behavioral evaluation scenarios
 
-Status: the **full suite is not executed in Hermes or OMP**. Two adapted smoke cases (A and B) produced reviewed briefs on both hosts; see [smoke results](../docs/smoke-results.md), including OMP runtime caveats. The remaining scenarios are specifications, not passing test results. Structural unit tests cannot demonstrate prioritization quality.
+Status: the **full suite is not executed in Hermes or OMP**. Two adapted smoke cases (A and B) produced reviewed briefs on both hosts; see [smoke results](../docs/smoke-results.md), including OMP runtime caveats. The remaining scenarios are specifications, not passing test results. Structural unit tests cannot demonstrate mind-debug quality.
 
 ## Trial procedure (deferred)
 

@@ -1,5 +1,5 @@
 ---
-name: prioritization
+name: mind-debug
 description: "Use when clarifying goals and cutting distractions."
 version: 0.4.0
 author: IsrafilEMIN, Hermes Agent
@@ -11,7 +11,7 @@ metadata:
     related_skills: []
 ---
 
-# Prioritization
+# Mind Debug
 
 Help the user discover what matters, identify what currently prevents progress, and concentrate effort there. Focus is exclusion, not a better ordering of every possibility.
 

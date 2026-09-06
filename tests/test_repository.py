@@ -4,7 +4,7 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "skills/prioritization/SKILL.md"
+SKILL = ROOT / "skills/mind-debug/SKILL.md"
 
 
 class RepositoryTests(unittest.TestCase):
@@ -14,7 +14,7 @@ class RepositoryTests(unittest.TestCase):
         _, header, body = text.split("---\n", 2)
         for key in ("name", "description", "version", "author", "license", "platforms", "metadata"):
             self.assertRegex(header, rf"(?m)^{key}: .+|^{key}:$")
-        self.assertIn("name: prioritization\n", header)
+        self.assertIn("name: mind-debug\n", header)
         match = re.search(r'^description: "(.+)"$', header, re.M)
         self.assertIsNotNone(match)
         assert match is not None
